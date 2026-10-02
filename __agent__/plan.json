@@ -2,18 +2,22 @@
   "schema_version": 1,
   "items": [
     {
-      "title": "Inspect OAuth client and frontend origin configuration",
-      "status": "done"
+      "title": "Inspect existing sample, device, and ESP32 integration paths",
+      "status": "in-progress"
     },
     {
-      "title": "Verify the active site origin and client ID alignment",
-      "status": "done"
+      "title": "Implement working analysis, history, and devices flows",
+      "status": "pending"
     },
     {
-      "title": "Provide exact Google Cloud Console fix and retest steps",
-      "status": "done"
+      "title": "Add real ESP32 sensor transport and API wiring",
+      "status": "pending"
+    },
+    {
+      "title": "Run tests and document physical sensor connection",
+      "status": "pending"
     }
   ],
-  "updated_at": "2026-10-02T15:21:17.612Z",
+  "updated_at": "2026-10-02T15:48:47.356Z",
   "session_id": "01a0fcdf-88e7-7484-976b-6fb73a241f28"
 }

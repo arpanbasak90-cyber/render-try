@@ -35,14 +35,19 @@ async def login_with_google(payload: GoogleLoginRequest):
         raise HTTPException(status_code=503, detail={"code": "google_auth_not_configured", "message": "Set GOOGLE_CLIENT_ID before enabling Google sign-in."})
 
     try:
-        async with httpx.AsyncClient(timeout=8) as client:
+        async with httpx.AsyncClient(timeout=10) as client:
             response = await client.get("https://oauth2.googleapis.com/tokeninfo", params={"id_token": payload.credential})
         response.raise_for_status()
         claims = response.json()
     except (httpx.HTTPError, ValueError) as exc:
-        raise HTTPException(status_code=401, detail={"code": "invalid_google_credential", "message": "Google could not verify this sign-in."}) from exc
+        raise HTTPException(status_code=401, detail={"code": "invalid_google_credential", "message": "Google token is expired or invalid. Please click and select your account again."}) from exc
 
-    if claims.get("aud") != settings.google_client_id or claims.get("email_verified") not in (True, "true", "True"):
+    aud = claims.get("aud") or claims.get("client_id")
+    if aud != settings.google_client_id:
+        raise HTTPException(status_code=401, detail={"code": "client_id_mismatch", "message": f"Client ID mismatch (aud: {aud})."})
+    
+    email_verified = claims.get("email_verified")
+    if email_verified not in (True, "true", "True", 1, "1"):
         raise HTTPException(status_code=401, detail={"code": "unverified_google_account", "message": "Use a verified Google account registered for this application."})
 
     now = datetime.now(timezone.utc)
