@@ -1,0 +1,23 @@
+[
+  {
+    "code": "JH",
+    "name": "Jharkhand",
+    "name_hi": "झारखंड",
+    "name_bn": "ঝাড়খণ্ড",
+    "priority": true
+  },
+  {
+    "code": "WB",
+    "name": "West Bengal",
+    "name_hi": "पश्चिम बंगाल",
+    "name_bn": "পশ্চিমবঙ্গ",
+    "priority": false
+  },
+  {
+    "code": "BR",
+    "name": "Bihar",
+    "name_hi": "बिहार",
+    "name_bn": "বিহার",
+    "priority": false
+  }
+]

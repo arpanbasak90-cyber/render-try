@@ -1,0 +1,767 @@
+[
+  {
+    "state_code": "JH",
+    "code": "B",
+    "name": "Bokaro",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "JH",
+    "code": "C",
+    "name": "Chatra",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "JH",
+    "code": "D",
+    "name": "Deoghar",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "JH",
+    "code": "D",
+    "name": "Dhanbad",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "JH",
+    "code": "D",
+    "name": "Dumka",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "JH",
+    "code": "ES",
+    "name": "East Singhbhum",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "JH",
+    "code": "G",
+    "name": "Garhwa",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "JH",
+    "code": "G",
+    "name": "Giridih",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "JH",
+    "code": "G",
+    "name": "Godda",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "JH",
+    "code": "G",
+    "name": "Gumla",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "JH",
+    "code": "H",
+    "name": "Hazaribagh",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "JH",
+    "code": "J",
+    "name": "Jamtara",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "JH",
+    "code": "K",
+    "name": "Khunti",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "JH",
+    "code": "K",
+    "name": "Koderma",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "JH",
+    "code": "L",
+    "name": "Latehar",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "JH",
+    "code": "L",
+    "name": "Lohardaga",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "JH",
+    "code": "P",
+    "name": "Pakur",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "JH",
+    "code": "P",
+    "name": "Palamu",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "JH",
+    "code": "R",
+    "name": "Ramgarh",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "JH",
+    "code": "R",
+    "name": "Ranchi",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "JH",
+    "code": "S",
+    "name": "Sahibganj",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "JH",
+    "code": "SK",
+    "name": "Seraikela Kharsawan",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "JH",
+    "code": "S",
+    "name": "Simdega",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "JH",
+    "code": "WS",
+    "name": "West Singhbhum",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "BR",
+    "code": "A",
+    "name": "Araria",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "BR",
+    "code": "A",
+    "name": "Arwal",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "BR",
+    "code": "A",
+    "name": "Aurangabad",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "BR",
+    "code": "B",
+    "name": "Banka",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "BR",
+    "code": "B",
+    "name": "Begusarai",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "BR",
+    "code": "B",
+    "name": "Bhagalpur",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "BR",
+    "code": "B",
+    "name": "Bhojpur",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "BR",
+    "code": "B",
+    "name": "Buxar",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "BR",
+    "code": "D",
+    "name": "Darbhanga",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "BR",
+    "code": "EC",
+    "name": "East Champaran",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "BR",
+    "code": "G",
+    "name": "Gaya",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "BR",
+    "code": "G",
+    "name": "Gopalganj",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "BR",
+    "code": "J",
+    "name": "Jamui",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "BR",
+    "code": "J",
+    "name": "Jehanabad",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "BR",
+    "code": "K",
+    "name": "Kaimur",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "BR",
+    "code": "K",
+    "name": "Katihar",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "BR",
+    "code": "K",
+    "name": "Khagaria",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "BR",
+    "code": "K",
+    "name": "Kishanganj",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "BR",
+    "code": "L",
+    "name": "Lakhisarai",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "BR",
+    "code": "M",
+    "name": "Madhepura",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "BR",
+    "code": "M",
+    "name": "Madhubani",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "BR",
+    "code": "M",
+    "name": "Munger",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "BR",
+    "code": "M",
+    "name": "Muzaffarpur",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "BR",
+    "code": "N",
+    "name": "Nalanda",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "BR",
+    "code": "N",
+    "name": "Nawada",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "BR",
+    "code": "P",
+    "name": "Patna",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "BR",
+    "code": "P",
+    "name": "Purnia",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "BR",
+    "code": "R",
+    "name": "Rohtas",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "BR",
+    "code": "S",
+    "name": "Saharsa",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "BR",
+    "code": "S",
+    "name": "Samastipur",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "BR",
+    "code": "S",
+    "name": "Saran",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "BR",
+    "code": "S",
+    "name": "Sheikhpura",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "BR",
+    "code": "S",
+    "name": "Sheohar",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "BR",
+    "code": "S",
+    "name": "Sitamarhi",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "BR",
+    "code": "S",
+    "name": "Siwan",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "BR",
+    "code": "S",
+    "name": "Supaul",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "BR",
+    "code": "V",
+    "name": "Vaishali",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "BR",
+    "code": "WC",
+    "name": "West Champaran",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "WB",
+    "code": "A",
+    "name": "Alipurduar",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "WB",
+    "code": "B",
+    "name": "Bankura",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "WB",
+    "code": "B",
+    "name": "Birbhum",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "WB",
+    "code": "CB",
+    "name": "Cooch Behar",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "WB",
+    "code": "DD",
+    "name": "Dakshin Dinajpur",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "WB",
+    "code": "D",
+    "name": "Darjeeling",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "WB",
+    "code": "H",
+    "name": "Hooghly",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "WB",
+    "code": "H",
+    "name": "Howrah",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "WB",
+    "code": "J",
+    "name": "Jalpaiguri",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "WB",
+    "code": "J",
+    "name": "Jhargram",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "WB",
+    "code": "K",
+    "name": "Kalimpong",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "WB",
+    "code": "K",
+    "name": "Kolkata",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "WB",
+    "code": "M",
+    "name": "Malda",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "WB",
+    "code": "M",
+    "name": "Murshidabad",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "WB",
+    "code": "N",
+    "name": "Nadia",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "WB",
+    "code": "N2P",
+    "name": "North 24 Parganas",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "WB",
+    "code": "PB",
+    "name": "Paschim Bardhaman",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "WB",
+    "code": "PM",
+    "name": "Paschim Medinipur",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "WB",
+    "code": "PB",
+    "name": "Purba Bardhaman",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "WB",
+    "code": "PM",
+    "name": "Purba Medinipur",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "WB",
+    "code": "P",
+    "name": "Purulia",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "WB",
+    "code": "S2P",
+    "name": "South 24 Parganas",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  },
+  {
+    "state_code": "WB",
+    "code": "UD",
+    "name": "Uttar Dinajpur",
+    "name_hi": null,
+    "name_bn": null,
+    "needs_review": true,
+    "aliases": []
+  }
+]

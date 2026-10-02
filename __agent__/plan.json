@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "items": [
+    {
+      "title": "Inspect project structure and Superdesign setup",
+      "status": "done"
+    },
+    {
+      "title": "Define authenticated frontend flow and backend integration points",
+      "status": "in-progress"
+    },
+    {
+      "title": "Replace frontend with TypeScript implementation",
+      "status": "pending"
+    },
+    {
+      "title": "Run checks and document missing backend/database wiring",
+      "status": "pending"
+    }
+  ],
+  "updated_at": "2026-10-02T13:58:30.433Z",
+  "session_id": "01a0fcdf-88e7-7484-976b-6fb73a241f28"
+}
