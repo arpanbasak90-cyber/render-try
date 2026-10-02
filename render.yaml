@@ -6,13 +6,9 @@ services:
     startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: DB_MODE
-        value: postgres # Options: postgres, mongo, memory, sqlite
-      - key: DATABASE_URL
-        fromDatabase:
-          name: jalraksha-db
-          property: connectionString
-      - key: MONGODB_URI
-        value: "" # Fill if using MongoDB Atlas
+        value: sqlite
+      - key: SQLITE_DB_PATH
+        value: jalraksha.db
       - key: FILTER_DURATION_S
         value: "300"
       - key: AUTH_ENABLED
@@ -23,9 +19,3 @@ services:
         value: "*"
       - key: DEVICE_TRANSPORT
         value: simulator
-
-databases:
-  - name: jalraksha-db
-    databaseName: jalraksha
-    user: jalraksha_user
-    plan: free
