@@ -11,13 +11,13 @@
     },
     {
       "title": "Replace frontend with TypeScript implementation",
-      "status": "in-progress"
+      "status": "done"
     },
     {
       "title": "Run checks and document missing backend/database wiring",
-      "status": "pending"
+      "status": "done"
     }
   ],
-  "updated_at": "2026-10-02T14:09:28.560Z",
+  "updated_at": "2026-10-02T14:16:10.754Z",
   "session_id": "01a0fcdf-88e7-7484-976b-6fb73a241f28"
 }
