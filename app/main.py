@@ -6,12 +6,14 @@ from app.core.errors import AppError, app_error_handler
 from app.db.mongo import init_db
 from app.db.indexes import create_indexes
 from app.core.constants import STATE_NAMES,SOURCE_TYPES,SCENARIOS
+from app.api.auth import router as auth_router
 import json
 from pathlib import Path
 DISTRICTS=json.loads(Path('app/data/geography/districts.json').read_text())
 from datetime import datetime,timezone
 settings=get_settings(); app=FastAPI(title='JALRAKSHA Backend',version='0.1.0'); app.add_exception_handler(AppError,app_error_handler)
 app.add_middleware(CORSMiddleware,allow_origins=settings.cors_origins.split(','),allow_methods=['*'],allow_headers=['*'])
+app.include_router(auth_router)
 @app.on_event('startup')
 async def startup():
     app.state.database=await init_db(settings); await create_indexes(app.state.database)

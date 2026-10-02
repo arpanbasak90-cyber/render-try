@@ -7,17 +7,17 @@
     },
     {
       "title": "Define authenticated frontend flow and backend integration points",
-      "status": "in-progress"
+      "status": "done"
     },
     {
       "title": "Replace frontend with TypeScript implementation",
-      "status": "pending"
+      "status": "in-progress"
     },
     {
       "title": "Run checks and document missing backend/database wiring",
       "status": "pending"
     }
   ],
-  "updated_at": "2026-10-02T13:58:30.433Z",
+  "updated_at": "2026-10-02T14:09:28.560Z",
   "session_id": "01a0fcdf-88e7-7484-976b-6fb73a241f28"
 }
