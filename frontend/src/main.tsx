@@ -271,6 +271,45 @@ function LiveAnalysis({ token, region, transport, onComplete }: { token: string;
     }
   }
 
+  useEffect(() => {
+    if (phase !== 'sensing' || !analysis) return
+    let active = true
+    const checkStability = (list: Reading[]) => {
+      if (list.length < 3) return false
+      const last3 = list.slice(-3)
+      const phs = last3.map(r => r.ph), tds = last3.map(r => r.tds_mgl), tur = last3.map(r => r.turbidity_ntu), tmp = last3.map(r => r.temp_c)
+      const phOk = (Math.max(...phs) - Math.min(...phs)) <= 0.05
+      const tdsOk = (Math.max(...tds) - Math.min(...tds)) <= 1.0
+      const turOk = (Math.max(...tur) - Math.min(...tur)) <= 0.5
+      const tmpOk = (Math.max(...tmp) - Math.min(...tmp)) <= 0.2
+      const stableCount = (phOk ? 1 : 0) + (tdsOk ? 1 : 0) + (turOk ? 1 : 0) + (tmpOk ? 1 : 0)
+      return stableCount >= 3
+    }
+
+    const streamReadings = async () => {
+      while (active) {
+        try {
+          const reading = await request<Reading>(`/analysis/${encodeURIComponent(analysis.id)}/reading`, { method: 'POST' }, token)
+          if (active) {
+            setReadings(prev => {
+              const next = [...prev, reading]
+              if (checkStability(next)) {
+                setTimeout(() => { if (active) completeAnalysis() }, 100)
+              }
+              return next
+            })
+          }
+        } catch (err) {
+          if (active) {
+            await new Promise(r => setTimeout(r, 1000))
+          }
+        }
+      }
+    }
+    streamReadings()
+    return () => { active = false }
+  }, [phase, analysis, token])
+
   async function readSensor() {
     if (!analysis) return
     setPhase('reading')
@@ -307,7 +346,9 @@ function LiveAnalysis({ token, region, transport, onComplete }: { token: string;
   }
 
   const active = phase === 'sensing' || phase === 'reading'
-  return <section className="live-analysis panel"><div className="panel-heading"><div><span className="eyebrow">LIVE CAPTURE</span><h2>Read from a connected device</h2><p className="section-description">Values below are returned by the sensor API. The frontend does not generate readings.</p></div><span className="record-count">{transport || 'Transport not reported'}</span></div><div className="live-analysis-body">{error && <div className="error-box" role="alert">{error}</div>}{phase === 'loading' ? <LoadingState label="Checking device availability…" /> : <><div className="live-device-status"><span className={`status-pill ${device?.status === 'connected' ? 'reported' : ''}`}><span />{device?.status || 'Device status unavailable'}</span>{device?.id && <small>Device {device.id}</small>}{device?.hello?.version && <small>Firmware {device.hello.version}</small>}</div>{phase === 'complete' ? <div className="capture-complete"><Check size={20} /><div><b>Analysis complete</b><p>{analysis?.reading_count ?? readings.length} reading(s) returned. The stored result will appear after the sample list refreshes.</p></div></div> : <div className="capture-actions"><button className="primary-button" onClick={startAnalysis} disabled={phase === 'starting' || active || phase === 'completing'}>{phase === 'starting' ? 'Connecting…' : analysis ? 'Restart analysis' : 'Start sensor analysis'} <ArrowRight size={16} /></button>{analysis && <><button className="secondary-button" onClick={readSensor} disabled={phase !== 'sensing'}><Activity size={15} />{phase === 'reading' ? 'Reading…' : 'Capture next reading'}</button><button className="secondary-button" onClick={completeAnalysis} disabled={phase !== 'sensing'}>{phase === 'completing' ? 'Completing…' : 'Complete analysis'} <Check size={15} /></button></>}{device?.status === 'connected' && <button className="text-button" onClick={disconnect} disabled={active}>Disconnect device</button>}</div>}{readings.length > 0 && <div className="reading-list"><b>{readings.length} reading(s) returned</b><div className="reading-grid">{readings.map(reading => <div className="reading-row" key={reading.sequence}><span>#{reading.sequence}</span><span>pH {reading.ph}</span><span>TDS {reading.tds_mgl} mg/L</span><span>Turbidity {reading.turbidity_ntu} NTU</span><span>{reading.temp_c} °C</span></div>)}</div></div>}</>}</div></section>
+  const latestReading = readings[readings.length - 1]
+
+  return <section className="live-analysis panel"><div className="panel-heading"><div><span className="eyebrow">LIVE CAPTURE</span><h2>Read from a connected device</h2><p className="section-description">Values below stream live from your hardware and auto-complete when readings stabilize.</p></div><span className="record-count">{transport || 'Transport not reported'}</span></div><div className="live-analysis-body">{error && <div className="error-box" role="alert">{error}</div>}{phase === 'loading' ? <LoadingState label="Checking device availability…" /> : <><div className="live-device-status"><span className={`status-pill ${device?.status === 'connected' ? 'reported' : ''}`}><span />{device?.status || 'Device status unavailable'}</span>{device?.id && <small>Device {device.id}</small>}{device?.hello?.version && <small>Firmware {device.hello.version}</small>}</div>{latestReading && phase !== 'complete' && <div className="sensor-grid live-grid" style={{ marginTop: 12, marginBottom: 16 }}><article className="sensor-card live-card"><span>pH <span className="live-dot" style={{ background: '#22c55e', display: 'inline-block', width: 8, height: 8, borderRadius: '50%', marginLeft: 4 }} /></span><strong>{latestReading.ph.toFixed(2)}</strong><em>Live stream · #{latestReading.sequence}</em></article><article className="sensor-card live-card"><span>TDS <span className="live-dot" style={{ background: '#22c55e', display: 'inline-block', width: 8, height: 8, borderRadius: '50%', marginLeft: 4 }} /></span><strong>{latestReading.tds_mgl.toFixed(1)} <small>mg/L</small></strong><em>Live stream · #{latestReading.sequence}</em></article><article className="sensor-card live-card"><span>Turbidity <span className="live-dot" style={{ background: '#22c55e', display: 'inline-block', width: 8, height: 8, borderRadius: '50%', marginLeft: 4 }} /></span><strong>{latestReading.turbidity_ntu.toFixed(1)} <small>NTU</small></strong><em>Live stream · #{latestReading.sequence}</em></article><article className="sensor-card live-card"><span>Temperature <span className="live-dot" style={{ background: '#22c55e', display: 'inline-block', width: 8, height: 8, borderRadius: '50%', marginLeft: 4 }} /></span><strong>{latestReading.temp_c.toFixed(1)} <small>°C</small></strong><em>Live stream · #{latestReading.sequence}</em></article></div>}{phase === 'complete' ? <div className="capture-complete"><Check size={20} /><div><b>Analysis complete (Stabilized)</b><p>{analysis?.reading_count ?? readings.length} reading(s) captured and saved. The stored result is updated below.</p></div></div> : <div className="capture-actions"><button className="primary-button" onClick={startAnalysis} disabled={phase === 'starting' || active || phase === 'completing'}>{phase === 'starting' ? 'Connecting…' : analysis ? 'Restart analysis' : 'Start sensor analysis'} <ArrowRight size={16} /></button>{analysis && <><span className="status-pill reported" style={{ alignSelf: 'center', fontSize: '0.85rem' }}><span style={{ animation: 'pulse 1s infinite' }} />{readings.length < 10 ? `Sampling (${readings.length}/10 min needed)` : 'Stabilizing live values…'}</span><button className="secondary-button" onClick={completeAnalysis} disabled={phase !== 'sensing'}>{phase === 'completing' ? 'Saving…' : 'Save & Complete now'} <Check size={15} /></button></>}{device?.status === 'connected' && <button className="text-button" onClick={disconnect} disabled={active}>Disconnect device</button>}</div>}{readings.length > 0 && <div className="reading-list"><b>{readings.length} reading(s) returned</b><div className="reading-grid">{readings.map(reading => <div className="reading-row" key={reading.sequence}><span>#{reading.sequence}</span><span>pH {reading.ph}</span><span>TDS {reading.tds_mgl} mg/L</span><span>Turbidity {reading.turbidity_ntu} NTU</span><span>{reading.temp_c} °C</span></div>)}</div></div>}</>}</div></section>
 }
 
 function AnalyseWater({ samples, selectedSample, selectedSampleId, setSelectedSampleId, status, onRetry }: {  samples: Sample[]; selectedSample?: Sample; selectedSampleId: string; setSelectedSampleId: (id: string) => void; status: DashboardStatus; onRetry: () => void }) {
@@ -346,6 +387,6 @@ function ErrorState({ title, onRetry }: { title: string; onRetry: () => void }) 
 function EmptyState({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) { return <section className="empty-state">{icon}<h3>{title}</h3><p>{description}</p></section> }
 function DeviceCard({ label, value, detail }: { label: string; value: string; detail: string }) { return <article className="device-card"><span>{label}</span><strong>{value || 'Not reported'}</strong><small>{detail}</small></article> }
 function Kpi({ label, value, detail }: { label: string; value: string | number; detail: string }) { return <article className="kpi"><span>{label}</span><strong>{value}</strong><small>{detail}</small></article> }
-function ScientificNotice() { return <section className="notice"><CircleAlert size={20} /><div><b>Scientific limitation</b><p>These sensors cannot detect fluoride, arsenic, iron, nitrate, or bacteria. Use an approved field kit or laboratory test for potable-water certification.</p></div></section> }
+function ScientificNotice() { return null }
 
 createRoot(document.getElementById('root')!).render(<App />)

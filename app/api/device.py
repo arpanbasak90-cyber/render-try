@@ -46,6 +46,8 @@ class DeviceManager:
         self.transport = self._make_transport()
         try:
             await self.transport.open()
+            if self.settings.device_transport == 'serial' and self.settings.serial_boot_delay_s > 0:
+                await asyncio.sleep(self.settings.serial_boot_delay_s)
             await self.transport.write('HELLO?')
             parser = ProtocolParser(self.settings.serial_require_checksum)
             deadline = asyncio.get_running_loop().time() + self.settings.ack_timeout_s

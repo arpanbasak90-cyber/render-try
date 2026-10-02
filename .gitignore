@@ -3,11 +3,19 @@
 .env.local
 .env.*.local
 *.env
+!*.env.example
 frontend/.env
 frontend/.env.local
 
+# Databases & Local SQLite
+*.db
+*.sqlite
+*.sqlite3
+jalraksha.db
+
 # Python
 __pycache__/
+**/__pycache__/
 *.py[cod]
 *$py.class
 *.so

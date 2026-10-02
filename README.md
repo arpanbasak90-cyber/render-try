@@ -26,6 +26,28 @@ See `.env.example`; variables map directly to the prompt's configuration contrac
 
 The four sensors measure only pH, TDS, turbidity, and temperature. They cannot detect fluoride, arsenic, iron, nitrate, or bacteria; the backend must not treat a sensor-only result as proof of potable water.
 
-## Deployment
+## Deployment & Render Database Setup
 
-Serial access works when the API runs directly on the USB-connected machine. Windows should run natively rather than in Docker. On Linux a compose `devices:` mapping can expose a serial device through an environment-provided path; this is untested. Remote/wireless links would require a new Transport and are out of scope.
+This project supports **Render** (`render.com`) for one-click hosting and managed database deployment.
+
+### Option 1: Managed Render PostgreSQL (Recommended for Pure Render setup)
+Set environment variables:
+- `DB_MODE=postgres`
+- `DATABASE_URL=postgresql://user:password@hostname:5432/jalraksha` (auto-populated by Render Blueprint)
+
+### Option 2: MongoDB Atlas + Render Web Service
+Host your FastAPI Web Service on Render and connect to a free MongoDB Atlas cluster:
+- `DB_MODE=mongo`
+- `MONGODB_URI=mongodb+sandbox...`
+
+### Option 3: In-Memory / SQLite Mode (Development & Testing)
+- `DB_MODE=memory` or `DB_MODE=sqlite`
+
+### Deploying via Render Blueprint (`render.yaml`)
+1. Connect your repository to Render.
+2. Render will automatically detect [`render.yaml`](file:///c:/Users/lenovo/OneDrive/Desktop/New%20folder%20%282%29/rosmalai/render.yaml) and provision both the Web Service and Managed PostgreSQL database automatically.
+
+## Safety
+
+The four sensors measure only pH, TDS, turbidity, and temperature. They cannot detect fluoride, arsenic, iron, nitrate, or bacteria; the backend must not treat a sensor-only result as proof of potable water.
+
