@@ -2,22 +2,18 @@
   "schema_version": 1,
   "items": [
     {
-      "title": "Inspect project structure and Superdesign setup",
+      "title": "Inspect OAuth client and frontend origin configuration",
       "status": "done"
     },
     {
-      "title": "Define authenticated frontend flow and backend integration points",
+      "title": "Verify the active site origin and client ID alignment",
       "status": "done"
     },
     {
-      "title": "Replace frontend with TypeScript implementation",
-      "status": "done"
-    },
-    {
-      "title": "Run checks and document missing backend/database wiring",
+      "title": "Provide exact Google Cloud Console fix and retest steps",
       "status": "done"
     }
   ],
-  "updated_at": "2026-10-02T14:16:10.754Z",
+  "updated_at": "2026-10-02T15:21:17.612Z",
   "session_id": "01a0fcdf-88e7-7484-976b-6fb73a241f28"
 }
